@@ -16,9 +16,9 @@ var commentRoutes = require("./routes/comments"),
     productRoutes   = require("./routes/products"),
     indexRoutes   = require("./routes/index")
 
-var url= process.env.DATABASEURL || "mongodb://localhost:27017/products_app"; 
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
-
+var databaseUri= process.env.DATABASEURL || "mongodb://localhost:27017/products_app"; 
+mongoose.connect(databaseUri, { useMongoClient: true });
+      
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
