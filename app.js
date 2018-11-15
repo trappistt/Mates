@@ -18,7 +18,7 @@ var commentRoutes = require("./routes/comments"),
 
 mongoose.Promise = global.Promise;
 
-const databaseUri = process.env.DATABASEURL || "mongodb://localhost:27017/products_app";
+const databaseUri = process.env.DATABASEURL;
 
 mongoose.connect(databaseUri)
       .then(() => console.log(`Database connected`))
