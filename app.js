@@ -20,7 +20,7 @@ mongoose.Promise = global.Promise;
 
 const databaseUri = process.env.DATABASEURL || "mongodb://localhost:27017/products_app";
 
-mongoose.connect(databaseUri, { useMongoClient: true })
+mongoose.connect(databaseUri)
       .then(() => console.log(`Database connected`))
       .catch(err => console.log(`Database connection error: ${err.message}`));
       
