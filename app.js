@@ -16,13 +16,7 @@ var commentRoutes = require("./routes/comments"),
     productRoutes   = require("./routes/products"),
     indexRoutes   = require("./routes/index")
 
-mongoose.Promise = global.Promise;
-
-const databaseUri = process.env.DATABASEURL;
-
-mongoose.connect(databaseUri)
-      .then(() => console.log(`Database connected`))
-      .catch(err => console.log(`Database connection error: ${err.message}`));
+mongoose.connect("mongodb://mates:illkillyouwiththe924@ds163013.mlab.com:63013/mates")
       
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
