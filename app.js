@@ -16,7 +16,7 @@ var commentRoutes = require("./routes/comments"),
     productRoutes   = require("./routes/products"),
     indexRoutes   = require("./routes/index")
 
-var url= process.env.DATABASEURL; 
+var url= process.env.DATABASEURL || "mongodb://localhost:27017/products_app"; 
 mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
