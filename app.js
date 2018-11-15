@@ -16,7 +16,7 @@ var commentRoutes = require("./routes/comments"),
     productRoutes   = require("./routes/products"),
     indexRoutes   = require("./routes/index")
     
-mongoose.connect("mongodb://mates:illkillyouwiththe$1924@ds163013.mlab.com:63013/mates");
+mongoose.connect("mongodb://mates:illkillyouwiththe$1924@ds163013.mlab.com:63013/mates", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
